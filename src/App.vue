@@ -1,7 +1,7 @@
 <template>
-  <h1>Weather App</h1>
+  <h1>Colorado Springs</h1>
+  <SearchLocationBar />
   <div class="content">
-    <SearchLocationBar />
     <CurrentWeather />
     <hr />
   </div>
@@ -28,6 +28,16 @@ export default {
   margin: 0;
   padding: 0;
 }
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
 hr {
   height: 1px;
   background-color: white;
@@ -35,6 +45,8 @@ hr {
 }
 .content {
   flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
 }
 #app {
   display: flex;
@@ -42,7 +54,7 @@ hr {
   height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
   background: rgb(0, 255, 222);
   background: linear-gradient(
     5deg,
