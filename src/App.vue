@@ -57,10 +57,10 @@ hr {
   color: #ffffff;
   background: rgb(0, 255, 222);
   background: linear-gradient(
-    5deg,
-    rgba(0, 255, 222, 1) 0%,
-    rgba(0, 237, 255, 1) 30%,
-    rgba(167, 119, 255, 1) 100%
+    180deg,
+    rgba(0, 245, 222, 1) 0%,
+    rgba(0, 167, 205, 1) 50%,
+    rgba(53, 19, 95, 1) 100%
   );
 }
 </style>
