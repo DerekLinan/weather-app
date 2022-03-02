@@ -7,14 +7,18 @@
   <div v-if="foundSearch" class="content">
     <CurrentWeather :currentData="locationData" :isMetric="useMetric" />
     <hr />
+    <CurrentConditions />
+    <hr />
   </div>
   <AppFooter :time="updatedAt" />
 </template>
 
 <script>
-import CurrentWeather from "./components/CurrentWeather.vue";
 import SearchLocationBar from "./components/SearchLocationBar.vue";
 import AppFooter from "./components/AppFooter.vue";
+import CurrentWeather from "./components/CurrentWeather.vue";
+import CurrentConditions from "./components/CurrentConditions.vue";
+
 import { getCurrentWeather } from "./scripts/LoadUtils.js";
 
 export default {
@@ -29,8 +33,9 @@ export default {
   },
   components: {
     SearchLocationBar,
-    CurrentWeather,
     AppFooter,
+    CurrentWeather,
+    CurrentConditions,
   },
   methods: {
     handleSearchSubmission(search) {
@@ -49,7 +54,7 @@ export default {
             h > 12 ? h - 12 + ":" + m + " PM" : h + ":" + m + " AM";
         })
         .catch((e) => {
-          console.log(e);
+          alert(e.response.data.error.message);
         });
     },
   },
