@@ -1,18 +1,53 @@
 <template>
   <h2>Currently</h2>
-  <h3>Wed, February 23 1:45 PM</h3>
+  <h3 class="multi-line">
+    {{ getLocalDateTime }}
+  </h3>
   <div class="temperature-container">
     <div class="weather-icon">
       <img
-        src="//cdn.weatherapi.com/weather/64x64/night/116.png"
-        alt="cloudy"
+        :src="this.currentData.current.condition.icon"
+        :alt="this.currentData.current.condition.text"
       />
     </div>
-    <p class="temperature">7°</p>
+    <p class="temperature">{{ getTemperature }}</p>
   </div>
-  <div>10°/0° | Feels like -9°</div>
-  <h3>Cloudy</h3>
+  <h4>Feels like {{ getFeelsLike }}°</h4>
+  <h3>{{ this.currentData.current.condition.text }} weather</h3>
 </template>
+<script>
+export default {
+  props: {
+    currentData: {},
+    isMetric: Boolean,
+  },
+  computed: {
+    getTemperature() {
+      const { current } = this.currentData;
+      return this.isMetric ? current.temp_c + "C" : current.temp_f + "F";
+    },
+    getFeelsLike() {
+      const { current } = this.currentData;
+      return this.isMetric ? current.feelslike_c : current.feelslike_f;
+    },
+    getLocalDateTime() {
+      const localDate = this.currentData.location.localtime;
+      const dateObject = new Date(localDate);
+      const options = {
+        weekday: "short",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const time = localDate.split(" ")[1];
+      return (
+        dateObject.toLocaleDateString("en-US", options) +
+        ` ${time}\n${this.currentData.location.tz_id} timezone`
+      );
+    },
+  },
+};
+</script>
 
 <style scoped>
 * {
@@ -20,10 +55,13 @@
   margin-bottom: 1rem;
 }
 img {
+  object-fit: contain;
   margin: 0;
-  height: 100%;
   font-size: 1.5rem;
   text-align: center;
+}
+.multi-line {
+  white-space: pre-wrap;
 }
 .temperature-container {
   display: flex;

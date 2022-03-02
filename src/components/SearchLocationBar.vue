@@ -1,12 +1,43 @@
 <template>
   <div>
-    <form action="">
-      <label for="searchLocation">Search for weather</label>
-      <input id="searchLocation" type="text" placeholder="Location..." />
-      <button type="submit">Search</button>
+    <form @submit="OnSubmit">
+      <label for="searchLocation">{{ searchHeader }}</label>
+      <div>
+        <input
+          id="searchLocation"
+          type="text"
+          placeholder="Location..."
+          v-model="search"
+        />
+        <button type="submit">Search</button>
+      </div>
     </form>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    country: String,
+  },
+  data() {
+    return {
+      search: "",
+    };
+  },
+  methods: {
+    OnSubmit(e) {
+      e.preventDefault();
+      this.$emit("searchSubmitted", this.search);
+    },
+  },
+  computed: {
+    searchHeader() {
+      return this.country || "Search location for weather data...";
+    },
+  },
+};
+</script>
+
 
 <style scoped>
 * {
