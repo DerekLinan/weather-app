@@ -18,7 +18,7 @@
 <script>
 export default {
   props: {
-    currentData: {},
+    currentData: Object,
     isMetric: Boolean,
   },
   computed: {
@@ -56,8 +56,6 @@ export default {
 }
 img {
   object-fit: contain;
-  margin: 0;
-  font-size: 1.5rem;
   text-align: center;
 }
 .multi-line {
@@ -76,7 +74,7 @@ img {
   width: 7rem;
 }
 .temperature {
-  margin-left: 2rem;
+  margin-left: 1rem;
   line-height: 0.75;
   font-size: 10rem;
 }

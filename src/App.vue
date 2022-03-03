@@ -7,7 +7,7 @@
   <div v-if="foundSearch" class="content">
     <CurrentWeather :currentData="locationData" :isMetric="useMetric" />
     <hr />
-    <CurrentConditions />
+    <CurrentConditions :currentData="locationData" :isMetric="useMetric" />
     <hr />
   </div>
   <AppFooter :time="updatedAt" />
@@ -49,7 +49,7 @@ export default {
 
           const time = new Date();
           const h = time.getHours();
-          const m = time.getMinutes();
+          const m = time.getMinutes().toString().padStart(2, "0");
           this.updatedAt =
             h > 12 ? h - 12 + ":" + m + " PM" : h + ":" + m + " AM";
         })
