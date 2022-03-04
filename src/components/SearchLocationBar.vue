@@ -54,6 +54,11 @@ input {
   border-radius: 0.25rem 0 0 0.25rem;
   margin-right: 0;
 }
+label {
+  font-size: 125%;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
 button {
   height: 1.5rem;
   box-sizing: content-box;

@@ -9,6 +9,7 @@
         alt="Weather data by WeatherAPI.com"
         border="0"
     /></a>
+    <p>My web portfolio</p>
     <div>
       <p v-show="time">Updated {{ time }}</p>
     </div>

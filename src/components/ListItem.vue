@@ -1,5 +1,9 @@
 <template>
-  <div class="outer">
+  <div
+    @click="toggleSlotContent"
+    :class="hasSlotContent ? 'selectable' : ''"
+    class="outer"
+  >
     <div v-if="hasSource" class="icon">
       <img :src="iconSource" />
       <img
@@ -14,6 +18,15 @@
       <h3>{{ this.text }}</h3>
       <h3>{{ this.value }}</h3>
     </div>
+    <div
+      v-if="hasSlotContent"
+      @click="toggleSlotContent"
+      :class="isOpen ? 'close-arrow' : 'open-arrow'"
+    ></div>
+    <div v-else class="list-end"></div>
+  </div>
+  <div v-show="isOpen">
+    <slot></slot>
   </div>
 </template>
 
@@ -25,12 +38,30 @@ export default {
     value: [Number, String],
     rotation: [Number],
   },
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
   computed: {
     hasSource() {
       return this.iconSource ? true : false;
     },
     dialRotation() {
       return { "--dial-angle": this.rotation + "deg" };
+    },
+    hasSlotContent() {
+      return (
+        this.$slots.default &&
+        this.$slots.default().findIndex((o) => o.type !== Comment) !== -1
+      );
+    },
+  },
+  methods: {
+    toggleSlotContent() {
+      if (this.hasSlotContent) {
+        this.isOpen = !this.isOpen;
+      }
     },
   },
 };
@@ -55,6 +86,10 @@ img {
 .icon {
   position: relative;
   height: min(100%, 3rem);
+}
+.list-end {
+  width: 24px;
+  height: 100%;
 }
 .outer {
   display: flex;

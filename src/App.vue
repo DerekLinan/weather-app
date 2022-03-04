@@ -119,4 +119,27 @@ hr {
     rgba(53, 19, 95, 1) 100%
   );
 }
+.selectable:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.selectable {
+  user-select: none;
+}
+.open-arrow {
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
+  border-top: 24px solid white;
+  border-left: 12px solid rgba(0, 0, 0, 0);
+  border-right: 12px solid rgba(0, 0, 0, 0);
+}
+.close-arrow {
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
+  border-bottom: 24px solid white;
+  border-left: 12px solid rgba(0, 0, 0, 0);
+  border-right: 12px solid rgba(0, 0, 0, 0);
+}
 </style>
