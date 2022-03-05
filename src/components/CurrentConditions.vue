@@ -46,7 +46,7 @@
 
 <script>
 import ListItem from "./ListItem.vue";
-import UVIndex from "../content/UVIndex.vue";
+import UVIndex from "../page-content/UVIndex.vue";
 
 export default {
   props: {
