@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="540"
+   height="300"
+   viewBox="0 0 142.875 79.375"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="uv-index-chart.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="540px"
+     units="mm"
+     inkscape:zoom="0.77771465"
+     inkscape:cx="444.25034"
+     inkscape:cy="281.59428"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="2552"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient49575-6">
+      <stop
+         style="stop-color:#00fffc;stop-opacity:1"
+         offset="0"
+         id="stop49571" />
+      <stop
+         style="stop-color:#ff00ff;stop-opacity:1"
+         offset="0.20725389"
+         id="stop51638" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1"
+         offset="0.41288859"
+         id="stop52154" />
+      <stop
+         style="stop-color:#ff8700;stop-opacity:1"
+         offset="0.61123705"
+         id="stop52156" />
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1"
+         offset="0.81606221"
+         id="stop51252" />
+      <stop
+         style="stop-color:#00ff00;stop-opacity:1"
+         offset="1"
+         id="stop49573" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient49575-6"
+       id="linearGradient50098"
+       gradientUnits="userSpaceOnUse"
+       x1="46.948452"
+       y1="71.953606"
+       x2="46.948452"
+       y2="6.2938142"
+       gradientTransform="matrix(0.96014159,0,0,1.0154617,-1.1563272,-0.04112678)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;stroke:none;stroke-width:2.04305;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0,39.687501 V 0 H 82.020833 164.04167 V 39.687501 79.375 H 82.020833 0 Z"
+       id="path2472" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.653484"
+       y="15.967992"
+       id="text5556"><tspan
+         sodipodi:role="line"
+         id="tspan5554"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         x="46.653484"
+         y="15.967992">Low (&lt;2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.653484"
+       y="29.207495"
+       id="text31832"><tspan
+         sodipodi:role="line"
+         id="tspan31830"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         x="46.653484"
+         y="29.207495">Moderate (3 to 5)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.653484"
+       y="42.436661"
+       id="text39426"><tspan
+         sodipodi:role="line"
+         id="tspan39424"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         x="46.653484"
+         y="42.436661">High (6 to 7)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="47.573322"
+       y="55.665829"
+       id="text42766"><tspan
+         sodipodi:role="line"
+         id="tspan42764"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         x="47.573322"
+         y="55.665829">Very High (8 to 10)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.653484"
+       y="68.884659"
+       id="text46232"><tspan
+         sodipodi:role="line"
+         id="tspan46230"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         x="46.653484"
+         y="68.884659">Extreme (11+)</tspan></text>
+    <rect
+       style="fill:url(#linearGradient50098);fill-opacity:1;stroke:none;stroke-width:2.08898;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect47458"
+       width="39.6875"
+       height="66.675003"
+       x="4.2333331"
+       y="6.3499999" />
+  </g>
+</svg>

@@ -6,6 +6,7 @@
       text="UV Index"
       :value="currentData.current.uv.toFixed(1)"
     >
+      <UVIndex :indexValue="currentData.current.uv" />
     </ListItem>
     <ListItem
       :iconSource="require('../assets/precipitation.svg')"
@@ -45,6 +46,7 @@
 
 <script>
 import ListItem from "./ListItem.vue";
+import UVIndex from "../content/UVIndex.vue";
 
 export default {
   props: {
@@ -53,6 +55,7 @@ export default {
   },
   components: {
     ListItem,
+    UVIndex,
   },
 
   computed: {
@@ -100,8 +103,5 @@ export default {
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-.content > div:not(:last-child):not(.content) {
-  /* border-bottom: 1px solid rgba(100%, 100%, 100%, 0.4); */
 }
 </style>

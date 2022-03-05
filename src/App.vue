@@ -72,6 +72,9 @@ export default {
   margin: 0;
   padding: 0;
 }
+a:visited {
+  color: pink;
+}
 button:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
@@ -81,6 +84,7 @@ button:active {
 h1 {
   font-size: 5rem;
   text-transform: capitalize;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
 }
 h2 {
   font-size: 3rem;

@@ -25,7 +25,7 @@
     ></div>
     <div v-else class="list-end"></div>
   </div>
-  <div v-show="isOpen">
+  <div v-show="isOpen" class="slot-content">
     <slot></slot>
   </div>
 </template>
@@ -93,12 +93,12 @@ img {
 }
 .outer {
   display: flex;
-  padding: 0.25rem;
+  padding: 0.5rem;
   gap: 0.25rem;
   height: min(3rem);
   width: max(40rem);
   align-items: center;
-  margin: 0.25rem;
+  margin: 0rem;
 }
 .inner {
   margin: 0.25rem;
@@ -107,5 +107,10 @@ img {
   flex-grow: 1;
   flex-shrink: 1;
   justify-content: space-between;
+}
+.slot-content {
+  padding-bottom: 0.5rem;
+  width: 38rem;
+  border-bottom: 1px solid rgba(100%, 100%, 100%, 0.4);
 }
 </style>
