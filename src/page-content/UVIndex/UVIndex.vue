@@ -5,7 +5,7 @@
   <a href="https://enviro.epa.gov/facts/uv/uv_descriptions.html" target="none">
     <img
       class="chart"
-      :src="require('../assets/uv-index-chart.svg')"
+      :src="require('../../assets/uv-index-chart.svg')"
       alt="UV Index Chart"
   /></a>
   <h4>
