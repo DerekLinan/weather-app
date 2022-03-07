@@ -9,7 +9,7 @@
           placeholder="Location..."
           v-model="search"
         />
-        <button type="submit">Search</button>
+        <button type="submit">Search for city</button>
       </div>
     </form>
   </div>

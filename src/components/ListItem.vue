@@ -25,7 +25,11 @@
     ></div>
     <div v-else class="list-end"></div>
   </div>
-  <div v-show="isOpen" class="slot-content">
+  <div
+    v-if="hasSlotContent"
+    :id="isOpen ? 'open' : 'close'"
+    class="slot-content"
+  >
     <slot></slot>
   </div>
 </template>
@@ -37,6 +41,7 @@ export default {
     text: String,
     value: [Number, String],
     rotation: [Number],
+    slotHeight: String,
   },
   data() {
     return {
@@ -112,5 +117,15 @@ img {
   padding-bottom: 0.5rem;
   width: 38rem;
   border-bottom: 1px solid rgba(100%, 100%, 100%, 0.4);
+  transition: all 0.25s;
+}
+#open {
+  overflow: hidden;
+  height: v-bind(slotHeight);
+}
+#close {
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
 }
 </style>

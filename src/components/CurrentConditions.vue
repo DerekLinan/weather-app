@@ -5,8 +5,12 @@
       :iconSource="require('../assets/uv-index.svg')"
       text="UV Index"
       :value="currentData.current.uv.toFixed(1)"
+      :slotHeight="setUVHeight"
     >
-      <UVIndex :indexValue="currentData.current.uv" />
+      <UVIndex
+        @setHeight="(data) => (this.UVHeight = data)"
+        :indexValue="currentData.current.uv"
+      />
     </ListItem>
     <ListItem
       :iconSource="require('../assets/precipitation.svg')"
@@ -58,6 +62,12 @@ export default {
     UVIndex,
   },
 
+  data() {
+    return {
+      UVHeight: String,
+    };
+  },
+
   computed: {
     setPrecipitation() {
       const data = this.currentData.current;
@@ -87,10 +97,8 @@ export default {
       const data = this.currentData.current;
       return this.isMetric ? data.vis_km + " km" : data.vis_miles + " miles";
     },
-  },
-  methods: {
-    openDrawer(selection) {
-      console.log(`${selection} clicked`);
+    setUVHeight() {
+      return this.UVHeight ? this.UVHeight + "px" : "30rem";
     },
   },
 };

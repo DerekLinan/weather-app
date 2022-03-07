@@ -1,16 +1,18 @@
 <template>
-  <h1 v-if="foundSearch">{{ locationData.location.name }}</h1>
-  <SearchLocationBar
-    :country="ifCountry"
-    @searchSubmitted="handleSearchSubmission"
-  />
-  <div v-if="foundSearch" class="content">
-    <CurrentWeather :currentData="locationData" :isMetric="useMetric" />
-    <hr />
-    <CurrentConditions :currentData="locationData" :isMetric="useMetric" />
-    <hr />
+  <div class="root" :class="styleBackground">
+    <h1 v-if="foundSearch">{{ locationData.location.name }}</h1>
+    <SearchLocationBar
+      :country="ifCountry"
+      @searchSubmitted="handleSearchSubmission"
+    />
+    <div v-if="foundSearch" class="content">
+      <CurrentWeather :currentData="locationData" :isMetric="useMetric" />
+      <hr />
+      <CurrentConditions :currentData="locationData" :isMetric="useMetric" />
+      <hr />
+    </div>
+    <AppFooter :time="updatedAt" />
   </div>
-  <AppFooter :time="updatedAt" />
 </template>
 
 <script>
@@ -29,6 +31,7 @@ export default {
       foundSearch: false,
       useMetric: false,
       updatedAt: undefined,
+      isDay: true,
     };
   },
   components: {
@@ -43,9 +46,9 @@ export default {
       this.updatedAt = undefined;
       getCurrentWeather(search)
         .then((res) => {
-          console.log(res.data);
           this.locationData = res.data;
           this.foundSearch = true;
+          this.isDay = res.data.current.is_day;
 
           const time = new Date();
           const h = time.getHours();
@@ -62,6 +65,9 @@ export default {
     ifCountry() {
       return this.foundSearch ? this.locationData.location.country : "";
     },
+    styleBackground() {
+      return this.isDay ? "day" : "night";
+    },
   },
 };
 </script>
@@ -77,6 +83,7 @@ a:visited {
 }
 button:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 button:active {
   filter: brightness(50%);
@@ -107,7 +114,7 @@ hr {
   flex-shrink: 1;
   overflow: auto;
 }
-#app {
+.root {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -115,12 +122,23 @@ hr {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #ffffff;
+}
+.day {
   background: rgb(0, 255, 222);
   background: linear-gradient(
     180deg,
     rgba(0, 245, 222, 1) 0%,
     rgba(0, 167, 205, 1) 50%,
     rgba(53, 19, 95, 1) 100%
+  );
+}
+.night {
+  background: rgb(127, 0, 140);
+  background: linear-gradient(
+    0deg,
+    rgba(127, 0, 140, 1) 0%,
+    rgba(0, 11, 161, 1) 63%,
+    rgba(0, 0, 0, 1) 100%
   );
 }
 .selectable:hover {

@@ -1,18 +1,23 @@
 <template>
-  <div class="drawer-content">
-    <component :is="getRecommendation"></component>
+  <div ref="content">
+    <div class="drawer-content">
+      <component :is="getRecommendation"></component>
+    </div>
+    <a
+      href="https://enviro.epa.gov/facts/uv/uv_descriptions.html"
+      target="none"
+    >
+      <img
+        class="chart"
+        :src="require('../../assets/uv-index-chart.svg')"
+        alt="UV Index Chart"
+    /></a>
+    <h4>
+      Find out
+      <a href="https://www.epa.gov/sunsafety/uv-index-1" target="none">more</a>
+      .
+    </h4>
   </div>
-  <a href="https://enviro.epa.gov/facts/uv/uv_descriptions.html" target="none">
-    <img
-      class="chart"
-      :src="require('../../assets/uv-index-chart.svg')"
-      alt="UV Index Chart"
-  /></a>
-  <h4>
-    Find out
-    <a href="https://www.epa.gov/sunsafety/uv-index-1" target="none">more</a>
-    .
-  </h4>
 </template>
 
 <script>
@@ -26,6 +31,7 @@ export default {
   props: {
     indexValue: Number,
   },
+  emits: ["setHeight"],
   computed: {
     getRecommendation() {
       if (this.indexValue <= 2) {
@@ -40,6 +46,9 @@ export default {
         return UVIndexExtreme;
       }
     },
+  },
+  mounted() {
+    this.$emit("setHeight", this.$refs.content.scrollHeight);
   },
 };
 </script>
