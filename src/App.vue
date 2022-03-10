@@ -11,7 +11,11 @@
       <CurrentConditions :currentData="locationData" :isMetric="useMetric" />
       <hr />
     </div>
-    <AppFooter :time="updatedAt" />
+    <AppFooter
+      :time="updatedAt"
+      :search="foundSearch ? locationData.location.name : ''"
+      @refreshQuery="handleSearchSubmission"
+    />
   </div>
 </template>
 
@@ -143,6 +147,7 @@ hr {
 }
 .selectable:hover {
   background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
   cursor: pointer;
 }
 .selectable {

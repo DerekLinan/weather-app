@@ -10,16 +10,44 @@
         border="0"
     /></a>
     <p>My web portfolio</p>
-    <div>
-      <p v-show="time">Updated {{ time }}</p>
+    <div v-if="time" class="updater">
+      <p>Updated {{ time }}</p>
+      <img
+        title="Refresh data"
+        v-show="canRefresh"
+        :src="require('../assets/retry.svg')"
+        alt="retry"
+        class="footer-icon"
+        :class="canRefresh ? 'selectable' : 'unselectable'"
+        @click="refreshQuery(search)"
+      />
     </div>
+    <div v-else></div>
   </footer>
 </template>
 
 <script>
 export default {
+  name: "AppFooter",
+  data() {
+    return {
+      canRefresh: true,
+    };
+  },
   props: {
     time: String,
+    search: String,
+  },
+  methods: {
+    refreshQuery(search) {
+      if (this.canRefresh) {
+        this.canRefresh = false;
+        this.$emit("refreshQuery", search);
+        setTimeout(() => {
+          this.canRefresh = true;
+        }, 60000);
+      }
+    },
   },
 };
 </script>
@@ -31,5 +59,20 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.footer-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.unselectable:hover {
+  cursor: not-allowed;
+}
+.selectable:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.updater {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 </style>
