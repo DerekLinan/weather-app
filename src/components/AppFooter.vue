@@ -52,7 +52,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 footer {
   padding: 0.5rem;

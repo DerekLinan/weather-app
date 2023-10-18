@@ -38,7 +38,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 * {
   margin-left: 0.5rem;
@@ -70,5 +69,5 @@ button {
   background-color: rgba(15, 25, 35, 0.5);
   color: white;
 }
-</style>>
-
+</style>
+>
